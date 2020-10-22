@@ -1,0 +1,28 @@
+{% load bootstrap4 %}
+{% bootstrap_css %}
+{% load crispy_forms_tags %}
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" class="col-sm-6"  novalidate>
+        {% csrf_token %}
+
+        {{ form.nombre|as_crispy_field}}
+
+        {{ form.empresa|as_crispy_field}}
+
+        {{ form.telefono|as_crispy_field}}
+
+        {{ form.email|as_crispy_field}}
+
+        {{ form.mensaje|as_crispy_field}}
+
+        <input onclick="href='admin'" type="submit" class="btn btn-success" value="Guardar">
+    </form>
+
+</body>
+</html>
